@@ -91,6 +91,7 @@ function moveVertical(dy: number) {
   }
 }
 
+//규칙 2로 리팩토링 해야할 부분 2
 function update() {
   while (inputs.length > 0) {
     let current = inputs.pop();
