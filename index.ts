@@ -109,7 +109,7 @@ function handleInputs() {
   }
 }
 
-//규칙 2로 리팩토링한 부분 5
+//규칙 3에 의해 리팩토링 해야할 부분
 function updateMap() {
   for (let y = map.length - 1; y >= 0; y--) {
     for (let x = 0; x < map[y].length; x++) {
@@ -134,7 +134,6 @@ function updateMap() {
   }
 }
 
-//규칙 2에 의해 리팩토링한 부분1
 function createGraphics() {
   let canvas = document.getElementById("GameCanvas") as HTMLCanvasElement;
   let g = canvas.getContext("2d");
@@ -142,7 +141,6 @@ function createGraphics() {
   return g;
 }
 
-//규칙 2에 의해 리팩토링한 부분2
 function draw() {
   let g = createGraphics();
   drawMap(g);
