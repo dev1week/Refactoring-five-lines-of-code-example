@@ -123,12 +123,17 @@ function update() {
   }
 }
 
-//리팩토링 해야하는 부분
-//함수 안에서 변수 g가 매개변수로 전달되기도 하고, 메서드를 호출하기도 함
-function draw() {
+//규칙 2에 의해 리팩토링한 부분1
+function createGraphics() {
   let canvas = document.getElementById("GameCanvas") as HTMLCanvasElement;
   let g = canvas.getContext("2d");
   g.clearRect(0, 0, canvas.width, canvas.height);
+  return g;
+}
+
+//규칙 2에 의해 리팩토링한 부분2
+function draw() {
+  let g = createGraphics();
   drawMap(g);
   drawPlayer(g);
 }
