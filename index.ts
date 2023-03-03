@@ -92,7 +92,14 @@ function moveVertical(dy: number) {
 }
 
 //규칙 2로 리팩토링 해야할 부분 2
+//규칙 2로 리팩토링한 부분 3
 function update() {
+  handleInputs();
+  updateMap();
+}
+
+//규칙 2로 리팩토링한 부분 4
+function handleInputs() {
   while (inputs.length > 0) {
     let current = inputs.pop();
     if (current === Input.LEFT) moveHorizontal(-1);
@@ -100,7 +107,10 @@ function update() {
     else if (current === Input.UP) moveVertical(-1);
     else if (current === Input.DOWN) moveVertical(1);
   }
+}
 
+//규칙 2로 리팩토링한 부분 5
+function updateMap() {
   for (let y = map.length - 1; y >= 0; y--) {
     for (let x = 0; x < map[y].length; x++) {
       if (
