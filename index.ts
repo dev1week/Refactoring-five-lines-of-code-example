@@ -122,7 +122,9 @@ function update() {
     }
   }
 }
-//리팩토링 부분1
+
+//리팩토링 해야하는 부분
+//함수 안에서 변수 g가 매개변수로 전달되기도 하고, 메서드를 호출하기도 함
 function draw() {
   let canvas = document.getElementById("GameCanvas") as HTMLCanvasElement;
   let g = canvas.getContext("2d");
@@ -131,9 +133,7 @@ function draw() {
   drawPlayer(g);
 }
 
-//리팩토링 부분2
 function drawMap(g: CanvasRenderingContext2D) {
-  // Draw map
   for (let y = 0; y < map.length; y++) {
     for (let x = 0; x < map[y].length; x++) {
       if (map[y][x] === Tile.FLUX) g.fillStyle = "#ccffcc";
@@ -152,9 +152,8 @@ function drawMap(g: CanvasRenderingContext2D) {
     }
   }
 }
-//리팩토링 부분3
+
 function drawPlayer(g: CanvasRenderingContext2D) {
-  // Draw player
   g.fillStyle = "#ff0000";
   g.fillRect(playerx * TILE_SIZE, playery * TILE_SIZE, TILE_SIZE, TILE_SIZE);
 }
